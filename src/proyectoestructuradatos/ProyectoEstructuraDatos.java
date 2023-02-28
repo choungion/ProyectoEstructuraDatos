@@ -1,20 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package proyectoestructuradatos;
+import java.util.Scanner;
 
-/**
- *
- * @author choungion
- */
 public class ProyectoEstructuraDatos {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Scanner sc = new Scanner (System.in);
+        
+        ListaS lista = new ListaS();
+        String name;
+        String ape;
+        String fullname; 
+
+        System.out.println("Ingrese el nombre del alumno: ");
+        name = sc.next();
+        System.out.println("Ingrese el apellido del alumno: ");
+        ape = sc.next();
+        fullname = name +", " + ape;
+        lista.addAlumno(fullname);
+        lista.imprimir();
     }
     
 }
