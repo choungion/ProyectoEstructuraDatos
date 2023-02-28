@@ -7,6 +7,7 @@ public class ProyectoEstructuraDatos {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner (System.in);
+        Menu menu = new Menu();
         
         ListaS lista = new ListaS();
         String fullname, DatosAlumno, ape, name; 
@@ -14,6 +15,8 @@ public class ProyectoEstructuraDatos {
         int ID = random.nextInt(900)+100;
         double nota;
 
+        menu.setVisible(true);
+        
         System.out.println("Ingrese el nombre del alumno: ");
         name = sc.next();
         System.out.println("Ingrese el apellido del alumno: ");
