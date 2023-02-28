@@ -1,4 +1,5 @@
 package proyectoestructuradatos;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ProyectoEstructuraDatos {
@@ -8,16 +9,22 @@ public class ProyectoEstructuraDatos {
         Scanner sc = new Scanner (System.in);
         
         ListaS lista = new ListaS();
-        String name;
-        String ape;
-        String fullname; 
+        String fullname, DatosAlumno, ape, name; 
+        Random random = new Random();
+        int ID = random.nextInt(900)+100;
+        double nota;
 
         System.out.println("Ingrese el nombre del alumno: ");
         name = sc.next();
         System.out.println("Ingrese el apellido del alumno: ");
         ape = sc.next();
         fullname = name +", " + ape;
-        lista.addAlumno(fullname);
+        System.out.println("Ingrese la nota del alumno: ");
+        nota = sc.nextDouble();
+
+        DatosAlumno = fullname + " " + ID + " " + nota;
+
+        lista.addAlumno(DatosAlumno);
         lista.imprimir();
     }
     
