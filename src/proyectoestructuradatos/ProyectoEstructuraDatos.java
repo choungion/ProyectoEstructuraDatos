@@ -14,9 +14,6 @@ public class ProyectoEstructuraDatos {
         Random random = new Random();
         int ID = random.nextInt(900)+100;
         double nota;
-
-        new MenuAdd().setVisible(true);
-        
         /*
         System.out.println("Ingrese el nombre del alumno: ");
         name = sc.next();
@@ -28,6 +25,7 @@ public class ProyectoEstructuraDatos {
         DatosAlumno = fullname + " " + ID + " " + nota;
          lista.addAlumno(DatosAlumno);
          */
+        new MenuPrincipal().setVisible(true);
 
         
 
