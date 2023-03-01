@@ -143,7 +143,7 @@ public class MenuAdd extends javax.swing.JFrame {
         int ID = random.nextInt(900)+100;
         ListaS lista = new ListaS();
         
-        String fullname = this.Nombre.getName() +", " + this.Apellido.getName();
+        String fullname = this.Nombre.getText() +", " + this.Apellido.getText();
         Double nota;
         try 
         {
