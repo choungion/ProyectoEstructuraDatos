@@ -12,7 +12,6 @@ public class ListaS  {
     private Nodo ultimo;
     private int tamano;
     
-
     public ListaS() {
         this.primero = null;
         this.ultimo = null;
@@ -32,8 +31,6 @@ public class ListaS  {
         
         if (siVacio()) 
         {
-            
-
             Nodo nuevo = new Nodo(dato);
             primero = nuevo;
             ultimo = nuevo;
@@ -91,5 +88,4 @@ public class ListaS  {
             JOptionPane.showMessageDialog(null, str);
         }
     }
-
 }

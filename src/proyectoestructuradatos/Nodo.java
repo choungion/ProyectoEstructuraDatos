@@ -9,7 +9,7 @@ public class Nodo {
     String dato;
     
     public Nodo(String dato){
-        this.dato = dato;
+        this.dato = Math.round(Math.random()*9999)+" "+dato;
         this.nodoDer = null;
     }
 }
