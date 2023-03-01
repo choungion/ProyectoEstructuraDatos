@@ -2,33 +2,25 @@ package proyectoestructuradatos;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+
 public class ProyectoEstructuraDatos {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner (System.in);
         Menu menu = new Menu();
-        
+
         ListaS lista = new ListaS();
-        String fullname, DatosAlumno, ape, name; 
-        Random random = new Random();
-        int ID = random.nextInt(900)+100;
-        double nota;
-
-        menu.setVisible(true);
         
-        System.out.println("Ingrese el nombre del alumno: ");
-        name = sc.next();
-        System.out.println("Ingrese el apellido del alumno: ");
-        ape = sc.next();
-        fullname = name +", " + ape;
-        System.out.println("Ingrese la nota del alumno: ");
-        nota = sc.nextDouble();
 
-        DatosAlumno = fullname + " " + ID + " " + nota;
+        new Menu().setVisible(true);
+        
+        
 
-        lista.addAlumno(DatosAlumno);
+        
         lista.imprimir();
     }
+    
     
 }
