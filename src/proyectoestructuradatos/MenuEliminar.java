@@ -129,6 +129,7 @@ public class MenuEliminar extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDActionPerformed
@@ -152,7 +153,18 @@ public class MenuEliminar extends javax.swing.JFrame {
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) 
     {
         ListaS lista = new ListaS();
-        lista.eliminar(this.ID.getText());
+        
+        try 
+        {
+            lista.eliminar(this.ID.getText());
+            lista.imprimir();
+            this.setVisible(false);
+            new MenuPrincipal().setVisible(true);
+         }
+         catch (NumberFormatException ex) 
+         {
+            new Aviso().setVisible(true);
+         }
     }
 
     /**
