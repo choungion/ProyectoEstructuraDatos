@@ -151,6 +151,8 @@ public class MenuAdd extends javax.swing.JFrame {
             String DatosAlumno = fullname + " " + ID + " " + this.Nota.getText();
             lista.addAlumno(DatosAlumno);
             lista.imprimir();
+            this.setVisible(false);
+            new MenuPrincipal().setVisible(true);
          }
          catch (NumberFormatException ex) 
          {
