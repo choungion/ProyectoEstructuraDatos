@@ -49,14 +49,16 @@ public class ListaS  {
         if (tamano != 0) {
             Nodo indice = primero;
             Nodo anterior = null;
-            if (indice.dato == dato) {
+            String[] datosIndice = indice.dato.split(" ");
+            String[] datosUltimo = ultimo.dato.split(" ");
+            if (datosIndice[0].equals(dato)) {
                 anterior = indice.nodoDer;
                 primero = anterior;
                 tamano -= 1;
             } else {
                 for (int i = 0; i < this.tamano; i++) {
-                    if (indice.dato == dato) {
-                        if (indice.dato == dato && ultimo.dato == dato) {
+                    if (datosIndice[0].equals(dato)) {
+                        if (datosIndice[0].equals(dato) && datosUltimo[0].equals(dato)) {
                             anterior.nodoDer = null;
                             ultimo = anterior;
                         } else {
@@ -67,6 +69,7 @@ public class ListaS  {
                     } else {
                         anterior = indice;
                         indice = indice.nodoDer;
+                        datosIndice = indice.dato.split(" ");
                     }
                 }
             }
