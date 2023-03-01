@@ -88,7 +88,8 @@ public class ListaS  {
                 temp = temp.nodoDer;
             }
 
-            JOptionPane.showMessageDialog(null, str);
+            //JOptionPane.showMessageDialog(null, str);
+            System.out.println(str);
         }
     }
 }
