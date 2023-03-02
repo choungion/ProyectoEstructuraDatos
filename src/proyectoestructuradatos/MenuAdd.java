@@ -139,25 +139,12 @@ public class MenuAdd extends javax.swing.JFrame {
     }//GEN-LAST:event_ApellidoActionPerformed
 
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
-        Random random = new Random();
-        int ID = random.nextInt(900)+100;
-        ListaS lista = new ListaS();
         
-        String fullname = this.Nombre.getText() +", " + this.Apellido.getText();
-        Double nota;
-        try 
-        {
-            nota = Double.valueOf(this.Nota.getText());
-            String DatosAlumno = fullname + " " + ID + " " + this.Nota.getText();
-            lista.addAlumno(DatosAlumno);
-            lista.imprimir();
-            this.setVisible(false);
-            new MenuPrincipal().setVisible(true);
-         }
-         catch (NumberFormatException ex) 
-         {
-            new Aviso().setVisible(true);
-         }
+        ListaS lista = new ListaS();
+        Double nota = Double.valueOf(this.Nota.getText());
+        String DatosAlumno = this.Nombre.getText() +", " + this.Apellido.getText() + " " + this.Nota.getText();
+        ProyectoEstructuraDatos.Add(DatosAlumno);
+        this.setVisible(false);
         
     }//GEN-LAST:event_AgregarActionPerformed
 

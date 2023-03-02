@@ -152,19 +152,8 @@ public class MenuEliminar extends javax.swing.JFrame {
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) 
     {
-        ListaS lista = new ListaS();
-        
-        try 
-        {
-            lista.eliminar(this.ID.getText());
-            lista.imprimir();
-            this.setVisible(false);
-            new MenuPrincipal().setVisible(true);
-         }
-         catch (NumberFormatException ex) 
-         {
-            new Aviso().setVisible(true);
-         }
+        ProyectoEstructuraDatos.Eliminar(this.ID.getText());
+        this.setVisible(false);
     }
 
     /**
