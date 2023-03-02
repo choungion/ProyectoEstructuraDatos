@@ -1,11 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyectoestructuradatos;
-
-import javax.swing.JOptionPane;
-
 
 public class ListaS  {
     private Nodo primero;
@@ -26,39 +19,38 @@ public class ListaS  {
         }
     }
 
-    public int addAlumno(String dato) 
+    public int agregarAlumno(String datos) 
     {
-        
         if (siVacio()) 
         {
-            Nodo nuevo = new Nodo(dato);
+            Nodo nuevo = new Nodo(datos);
             primero = nuevo;
             ultimo = nuevo;
             nuevo.nodoDer = nuevo;
         } else {
-            Nodo nuevo = new Nodo(dato);
+            Nodo nuevo = new Nodo(datos);
             nuevo.nodoDer = null;
             ultimo.nodoDer = nuevo;
             ultimo = nuevo;
         }
-        this.tamano++;
-        return this.tamano;
+        tamano++;
+        return tamano;
     }
 
-    public void eliminar(String dato) {
+    public void eliminarAlumno(String ID) {
         if (tamano != 0) {
             Nodo indice = primero;
             Nodo anterior = null;
             String[] datosIndice = indice.dato.split(" ");
             String[] datosUltimo = ultimo.dato.split(" ");
-            if (datosIndice[0].equals(dato)) {
+            if (datosIndice[0].equals(ID)) {
                 anterior = indice.nodoDer;
                 primero = anterior;
                 tamano -= 1;
             } else {
-                for (int i = 0; i < this.tamano; i++) {
-                    if (datosIndice[0].equals(dato)) {
-                        if (datosIndice[0].equals(dato) && datosUltimo[0].equals(dato)) {
+                for (int i = 0; i < tamano; i++) {
+                    if (datosIndice[0].equals(ID)) {
+                        if (datosIndice[0].equals(ID) && datosUltimo[0].equals(ID)) {
                             anterior.nodoDer = null;
                             ultimo = anterior;
                         } else {
@@ -72,10 +64,30 @@ public class ListaS  {
                         datosIndice = indice.dato.split(" ");
                     }
                 }
+                System.out.println("No se encontro alumno");
             }
         } else {
-            System.out.println("No hay ningún nodo\n");
+            System.out.println("No existe ningún alumno\n");
         }
+    }
+
+    public String consultarNota(String ID){
+        if (tamano != 0) {
+            Nodo temp = primero;
+            String[] datosAlumno = temp.dato.split(" ");
+            
+            for (int i = 0; i < tamano; i++) {
+                if (ID.equals(datosAlumno[0])) {
+                    return datosAlumno[3];//Nota del alumno
+                } else{
+                    temp = temp.nodoDer;
+                    datosAlumno = temp.dato.split(" ");
+                }
+            }
+        } else{
+            return "Lista vacia";
+        }
+        return "No existe ese ID";
     }
 
     public void imprimir() {
@@ -83,7 +95,7 @@ public class ListaS  {
             Nodo temp = primero;
             String str = "";
 
-            for (int i = 0; i < this.tamano; i++) {
+            for (int i = 0; i < tamano; i++) {
                 str = str + temp.dato + "\n";
                 temp = temp.nodoDer;
             }
