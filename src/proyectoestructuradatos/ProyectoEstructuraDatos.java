@@ -1,5 +1,8 @@
 package proyectoestructuradatos;
 
+import proyectoestructuradatos.Menus.Aviso;
+import proyectoestructuradatos.Menus.MenuPrincipal;
+
 
 public class ProyectoEstructuraDatos {
     private static ListaS lista = new ListaS();
