@@ -4,6 +4,7 @@ public class ListaS  {
     private Nodo primero;
     private Nodo ultimo;
     private int tamano;
+    private static String datos, nombre, info, nota;
     
     public ListaS() {
         this.primero = null;
@@ -90,6 +91,34 @@ public class ListaS  {
         return "No existe ese ID";
     }
 
+    public Nodo[] Completar(String dato) {
+        Nodo[] nodos = new Nodo[4];
+        Nodo indice = primero;
+        int contador = 0;
+        
+        while (indice != null && contador < 4) {
+            String[] datosIndice = indice.dato.split(" ");
+            
+            if (datosIndice[0].equals(dato)) {
+                nodos[0] = indice;
+                
+                for (int i = 1; i < 4 && indice.nodoDer != null; i++) {
+                    indice = indice.nodoDer;
+                    nodos[i] = indice;
+                }
+                String[] datos = nodos[0].dato.split(" ");
+                nombre = datos[1] + " " + datos[2];
+                nota = datos[3];
+                return nodos;
+            }
+            
+            indice = indice.nodoDer;
+            contador++;
+        }
+        
+        return null;
+    }
+
     public void imprimir() {
         if (tamano != 0) {
             Nodo temp = primero;
@@ -104,4 +133,13 @@ public class ListaS  {
             System.out.println(str);
         }
     }
+    public static String nombre()
+    {
+        return nombre;
+    }
+    public static String nota()
+    {
+        return nota;
+    }
+    
 }

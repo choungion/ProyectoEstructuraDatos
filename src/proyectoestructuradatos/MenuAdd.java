@@ -37,7 +37,7 @@ public class MenuAdd extends javax.swing.JFrame {
         Agregar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Ingrese el apellido del estudiante:");
 
@@ -141,10 +141,17 @@ public class MenuAdd extends javax.swing.JFrame {
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         
         ListaS lista = new ListaS();
-        Double nota = Double.valueOf(this.Nota.getText());
-        String DatosAlumno = this.Nombre.getText() +", " + this.Apellido.getText() + " " + this.Nota.getText();
-        ProyectoEstructuraDatos.Add(DatosAlumno);
-        this.setVisible(false);
+        String DatosAlumno = this.Nombre.getText() +" " + this.Apellido.getText() + " " + this.Nota.getText();
+        try
+        { 
+            Double nota = Double.valueOf(this.Nota.getText());
+            ProyectoEstructuraDatos.Add(DatosAlumno);
+            this.setVisible(false);
+        }
+        catch (NumberFormatException ex) 
+        {
+            new Aviso().setVisible(true);
+        }
         
     }//GEN-LAST:event_AgregarActionPerformed
 

@@ -34,6 +34,7 @@ public class MenuEliminar extends javax.swing.JFrame {
         Nota = new javax.swing.JTextField();
         Cancelar = new javax.swing.JButton();
         Eliminar = new javax.swing.JButton();
+        Buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +78,13 @@ public class MenuEliminar extends javax.swing.JFrame {
             }
         });
 
+        Buscar.setText("Buscar");
+        Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,19 +95,22 @@ public class MenuEliminar extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Nota, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69))
+                    .addComponent(Nota, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Buscar)))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(Cancelar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(268, Short.MAX_VALUE)
+                    .addContainerGap(249, Short.MAX_VALUE)
                     .addComponent(Eliminar)
                     .addGap(59, 59, 59)))
         );
@@ -109,7 +120,8 @@ public class MenuEliminar extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Buscar))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -118,7 +130,7 @@ public class MenuEliminar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Nota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(Cancelar)
                 .addGap(55, 55, 55))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,28 +144,42 @@ public class MenuEliminar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IDActionPerformed
+    private void IDActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }                                  
 
-    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreActionPerformed
+    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {
+    }                                      
 
     private void NotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NotaActionPerformed
 
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        ProyectoEstructuraDatos.Completar(this.ID.getText());
+        this.Nombre.setText(ListaS.nombre());
+        this.Nota.setText(ListaS.nota());
+    }//GEN-LAST:event_BuscarActionPerformed
+
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)
     {
         this.setVisible(false);
         new MenuPrincipal().setVisible(true);
-    }//GEN-LAST:event_CancelarActionPerformed
+    }                                        
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) 
     {
-        ProyectoEstructuraDatos.Eliminar(this.ID.getText());
-        this.setVisible(false);
+        try
+        {
+            Integer.parseInt(this.ID.getText());
+            ProyectoEstructuraDatos.Eliminar(this.ID.getText());
+            this.setVisible(false);
+        }
+        catch (NumberFormatException ex) 
+        {
+            new Aviso().setVisible(true);
+        }
     }
 
     /**
@@ -197,6 +223,7 @@ public class MenuEliminar extends javax.swing.JFrame {
     private javax.swing.JTextField ID;
     private javax.swing.JTextField Nombre;
     private javax.swing.JTextField Nota;
+    private javax.swing.JButton Buscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
