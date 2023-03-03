@@ -1,10 +1,16 @@
 package proyectoestructuradatos;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.w3c.dom.Node;
+
 public class ListaS  {
     private Nodo primero;
     private Nodo ultimo;
     private int tamano;
     private static String datos, nombre, info, nota;
+    private String[] split = new String[ListaMenu().size()];
     
     public ListaS() {
         this.primero = null;
@@ -119,6 +125,40 @@ public class ListaS  {
         return null;
     }
 
+    public List<String> ListaMenu() 
+    {
+        List<String> Lista = new ArrayList<String>();
+        if (tamano != 0) 
+        {
+            Nodo temp = primero;
+            String str = "";
+
+            for (int i = 0; i < tamano; i++) {
+                str = str + temp.dato + "\n";
+                temp = temp.nodoDer;
+            }
+            
+            Lista.add(str);
+            return Lista;
+        }
+        return Lista;
+    }
+    
+    public void separar(List<String> Lista)
+    {
+        for (String str : Lista) 
+        {
+            split = str.split(" ");
+            for (String posc : split) 
+            {
+                for (int i = 0; i < ListaMenu().size(); i++) 
+                {
+                    split[i] = ListaMenu().get(i);
+                }
+            }
+        }
+    }
+
     public void imprimir() {
         if (tamano != 0) {
             Nodo temp = primero;
@@ -140,6 +180,10 @@ public class ListaS  {
     public static String nota()
     {
         return nota;
+    }
+    public String[] DatosLista()
+    {
+        return split;
     }
     
 }
