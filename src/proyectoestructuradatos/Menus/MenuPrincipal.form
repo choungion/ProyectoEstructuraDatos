@@ -29,7 +29,7 @@
                   <Component id="Agregar" max="32767" attributes="0"/>
                   <Component id="Eliminar" alignment="0" max="32767" attributes="0"/>
                   <Component id="ConsultarNota" alignment="0" max="32767" attributes="0"/>
-                  <Component id="ConsultarPromedio" pref="255" max="32767" attributes="0"/>
+                  <Component id="ConsultarInfo" max="32767" attributes="0"/>
                   <Component id="Salir" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -46,7 +46,7 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,7 +68,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ConsultarNota" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ConsultarPromedio" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarInfo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Salir" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -172,12 +172,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarNotaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="ConsultarPromedio">
+    <Component class="javax.swing.JButton" name="ConsultarInfo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Consultar Promedio"/>
+        <Property name="text" type="java.lang.String" value="Consultar informacion de  notas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarPromedioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarInfoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

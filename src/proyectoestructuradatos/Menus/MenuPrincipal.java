@@ -38,7 +38,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         ID = new javax.swing.JList<>();
         ConsultarNota = new javax.swing.JButton();
-        ConsultarPromedio = new javax.swing.JButton();
+        ConsultarInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,10 +88,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        ConsultarPromedio.setText("Consultar Promedio");
-        ConsultarPromedio.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarInfo.setText("Consultar informacion de  notas");
+        ConsultarInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarPromedioActionPerformed(evt);
+                ConsultarInfoActionPerformed(evt);
             }
         });
 
@@ -105,7 +105,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ConsultarNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ConsultarPromedio, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(ConsultarInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +118,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(170, 170, 170)
                         .addComponent(jLabel2)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +137,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(ConsultarNota)
                         .addGap(18, 18, 18)
-                        .addComponent(ConsultarPromedio)
+                        .addComponent(ConsultarInfo)
                         .addGap(18, 18, 18)
                         .addComponent(Salir))
                     .addComponent(jScrollPane2))
@@ -158,9 +158,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_EliminarActionPerformed
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SalirActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        this.dispose();
+    }
 
     private void ConsultarNotaActionPerformed(java.awt.event.ActionEvent evt) 
     {
@@ -168,9 +169,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }
 
-    private void ConsultarPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarPromedioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConsultarPromedioActionPerformed
+    private void ConsultarInfoActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        new MenuInfoNotas().setVisible(true);
+        this.setVisible(false);
+    }
 
     /**
      * @param args the command line arguments
@@ -212,8 +215,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar;
     private javax.swing.JList<String> Alumnos;
+    private javax.swing.JButton ConsultarInfo;
     private javax.swing.JButton ConsultarNota;
-    private javax.swing.JButton ConsultarPromedio;
     private javax.swing.JButton Eliminar;
     private javax.swing.JList<String> ID;
     private javax.swing.JButton Salir;
