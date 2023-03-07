@@ -9,7 +9,7 @@ public class ListaS  {
     private Nodo primero;
     private Nodo ultimo;
     private int tamano;
-    private static String datos, nombre, info, nota;
+    private static String datos, nombre, info, nota, str;
     private String[] split = new String[ListaMenu().size()];
     
     public ListaS() {
@@ -159,19 +159,21 @@ public class ListaS  {
         }
     }
 
-    public void imprimir() {
+    public String imprimir() {
+        Nodo temp = primero;
+        String str = "a";
         if (tamano != 0) {
-            Nodo temp = primero;
-            String str = "";
-
             for (int i = 0; i < tamano; i++) {
                 str = str + temp.dato + "\n";
                 temp = temp.nodoDer;
             }
 
             //JOptionPane.showMessageDialog(null, str);
+            
             System.out.println(str);
+
         }
+        return str;
     }
     public static String nombre()
     {
@@ -185,5 +187,8 @@ public class ListaS  {
     {
         return split;
     }
-    
+    public static String imprime()
+    {
+        return str;
+    }
 }

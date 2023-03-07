@@ -4,6 +4,8 @@
  */
 package proyectoestructuradatos.Menus;
 
+import proyectoestructuradatos.ListaS;
+import proyectoestructuradatos.ProyectoEstructuraDatos;
 /**
  *
  * @author Choungion
@@ -97,7 +99,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -116,7 +118,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(170, 170, 170)
                         .addComponent(jLabel2)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +141,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Salir))
                     .addComponent(jScrollPane2))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,9 +162,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SalirActionPerformed
 
-    private void ConsultarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarNotaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConsultarNotaActionPerformed
+    private void ConsultarNotaActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        new MenuNota().setVisible(true);
+        this.setVisible(false);
+    }
 
     private void ConsultarPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarPromedioActionPerformed
         // TODO add your handling code here:
@@ -171,6 +175,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

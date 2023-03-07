@@ -37,6 +37,10 @@ public class ProyectoEstructuraDatos {
         String[] ID = lista.DatosLista();
         System.out.println(ID[0]);
     }
+    public static String Imprimir()
+    {
+        return lista.imprimir();
+    }
    /* public String ID(int i) 
     {
         lista.separar(lista.ListaMenu());
