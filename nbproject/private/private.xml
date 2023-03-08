@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Choungion/Documents/GitHub/ProyectoEstructuraDatos/src/proyectoestructuradatos/MenuAdd.java</file>
-            <file>file:/C:/Users/Choungion/Documents/GitHub/ProyectoEstructuraDatos/src/proyectoestructuradatos/ListaS.java</file>
-            <file>file:/C:/Users/Choungion/Documents/GitHub/ProyectoEstructuraDatos/src/proyectoestructuradatos/Aviso.java</file>
-            <file>file:/C:/Users/Choungion/Documents/GitHub/ProyectoEstructuraDatos/src/proyectoestructuradatos/ProyectoEstructuraDatos.java</file>
-            <file>file:/C:/Users/Choungion/Documents/GitHub/ProyectoEstructuraDatos/src/proyectoestructuradatos/MenuEliminar.java</file>
-            <file>file:/C:/Users/Choungion/Documents/GitHub/ProyectoEstructuraDatos/src/proyectoestructuradatos/MenuPrincipal.java</file>
+            <file>file:/home/choungion/Documents/Projects/ProyectoEstructuraDatos/ProyectoEstructuraDatos/src/proyectoestructuradatos/Menus/MenuNota.java</file>
+            <file>file:/home/choungion/Documents/Projects/ProyectoEstructuraDatos/ProyectoEstructuraDatos/src/proyectoestructuradatos/Menus/MenuPrincipal.java</file>
+            <file>file:/home/choungion/Documents/Projects/ProyectoEstructuraDatos/ProyectoEstructuraDatos/src/proyectoestructuradatos/Menus/MenuAdd.java</file>
+            <file>file:/home/choungion/Documents/Projects/ProyectoEstructuraDatos/ProyectoEstructuraDatos/src/proyectoestructuradatos/Menus/MenuEliminar.java</file>
+            <file>file:/home/choungion/Documents/Projects/ProyectoEstructuraDatos/ProyectoEstructuraDatos/src/proyectoestructuradatos/Menus/MenuInfoNotas.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,10 +1,16 @@
 package proyectoestructuradatos;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.w3c.dom.Node;
+
 public class ListaS  {
     private Nodo primero;
     private Nodo ultimo;
     private int tamano;
-    private static String datos, nombre, info, nota;
+    private static String datos, nombre, info, nota, str;
+    private String[] split = new String[ListaMenu().size()];
     
     public ListaS() {
         this.primero = null;
@@ -119,8 +125,11 @@ public class ListaS  {
         return null;
     }
 
-    public void imprimir() {
-        if (tamano != 0) {
+    public List<String> ListaMenu() 
+    {
+        List<String> Lista = new ArrayList<String>();
+        if (tamano != 0) 
+        {
             Nodo temp = primero;
             String str = "";
 
@@ -128,10 +137,43 @@ public class ListaS  {
                 str = str + temp.dato + "\n";
                 temp = temp.nodoDer;
             }
+            
+            Lista.add(str);
+            return Lista;
+        }
+        return Lista;
+    }
+    
+    public void separar(List<String> Lista)
+    {
+        for (String str : Lista) 
+        {
+            split = str.split(" ");
+            for (String posc : split) 
+            {
+                for (int i = 0; i < ListaMenu().size(); i++) 
+                {
+                    split[i] = ListaMenu().get(i);
+                }
+            }
+        }
+    }
+
+    public String imprimir() {
+        Nodo temp = primero;
+        String str = "a";
+        if (tamano != 0) {
+            for (int i = 0; i < tamano; i++) {
+                str = str + temp.dato + "\n";
+                temp = temp.nodoDer;
+            }
 
             //JOptionPane.showMessageDialog(null, str);
+            
             System.out.println(str);
+
         }
+        return str;
     }
     public static String nombre()
     {
@@ -141,5 +183,12 @@ public class ListaS  {
     {
         return nota;
     }
-    
+    public String[] DatosLista()
+    {
+        return split;
+    }
+    public static String imprime()
+    {
+        return str;
+    }
 }

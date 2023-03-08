@@ -7,6 +7,7 @@ import proyectoestructuradatos.Menus.MenuPrincipal;
 public class ProyectoEstructuraDatos {
     private static ListaS lista = new ListaS();
 
+
     public static void main(String[] args) { 
         new MenuPrincipal().setVisible(true);
     }
@@ -32,6 +33,20 @@ public class ProyectoEstructuraDatos {
 
     public static void Completar(String Dato) {
         lista.Completar(Dato);
+        lista.separar(lista.ListaMenu());
+        String[] ID = lista.DatosLista();
+        System.out.println(ID[0]);
     }
+    public static String Imprimir()
+    {
+        return lista.imprimir();
+    }
+   /* public String ID(int i) 
+    {
+        lista.separar(lista.ListaMenu());
+        String ID=lista.separar(lista.ListaMenu());
+        return ID;
+    }
+    */
 
 }
