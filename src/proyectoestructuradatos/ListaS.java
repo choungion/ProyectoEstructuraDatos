@@ -161,7 +161,7 @@ public class ListaS  {
 
     public String imprimir() {
         Nodo temp = primero;
-        String str = "a";
+        String str = "";
         if (tamano != 0) {
             for (int i = 0; i < tamano; i++) {
                 str = str + temp.dato + "\n";
@@ -190,5 +190,20 @@ public class ListaS  {
     public static String imprime()
     {
         return str;
+    }
+
+    public String[][] obtenerAlumnos(){
+        Nodo temp = primero;
+        String[][] alumnos = new String[tamano][];
+
+        for (int i = 0; i < tamano; i++) {
+            String[] todosLosDatos = temp.dato.split(" ");
+            String [] datosEspecificos = {todosLosDatos[0], todosLosDatos[1], todosLosDatos[2]};
+
+            alumnos[i] = datosEspecificos;
+            temp = temp.nodoDer;
+        }
+
+        return alumnos;
     }
 }
