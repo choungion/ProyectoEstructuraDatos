@@ -164,7 +164,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) 
     {
-        this.dispose();
+        System.exit(0);
     }
 
     private void ConsultarNotaActionPerformed(java.awt.event.ActionEvent evt) 
