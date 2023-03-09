@@ -4,6 +4,8 @@
  */
 package proyectoestructuradatos.Menus;
 
+import java.util.Arrays;
+
 import proyectoestructuradatos.ListaS;
 import proyectoestructuradatos.ProyectoEstructuraDatos;
 /**
@@ -39,7 +41,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ID = new javax.swing.JList<>();
         ConsultarNota = new javax.swing.JButton();
         ConsultarInfo = new javax.swing.JButton();
+        
 
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Agregar.setText("Agregar alumno");
@@ -68,14 +72,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel2.setText("ID");
 
         Alumnos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = ProyectoEstructuraDatos.nombres();
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(Alumnos);
 
         ID.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = ProyectoEstructuraDatos.id();
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });

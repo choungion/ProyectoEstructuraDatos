@@ -9,6 +9,8 @@ public class ProyectoEstructuraDatos {
 
 
     public static void main(String[] args) { 
+        lista.idAlumn();
+        lista.nomAlumn();
         new MenuPrincipal().setVisible(true);
     }
     public static void Add(String DatosAlumno)
@@ -31,22 +33,17 @@ public class ProyectoEstructuraDatos {
             new MenuPrincipal().setVisible(true);
     }
 
-    public static void Completar(String Dato) {
+    public static void Completar(String Dato) 
+    {
         lista.Completar(Dato);
-        lista.separar(lista.ListaMenu());
-        String[] ID = lista.DatosLista();
-        System.out.println(ID[0]);
     }
-    public static String Imprimir()
+    public static String [] id()
     {
-        return lista.imprimir();
+        return lista.idAlumn();
     }
-   /* public String ID(int i) 
+    public static String[] nombres()
     {
-        lista.separar(lista.ListaMenu());
-        String ID=lista.separar(lista.ListaMenu());
-        return ID;
+        return lista.nomAlumn();
     }
-    */
 
 }

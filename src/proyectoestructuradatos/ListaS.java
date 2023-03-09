@@ -10,7 +10,6 @@ public class ListaS  {
     private Nodo ultimo;
     private int tamano;
     private static String datos, nombre, info, nota, str;
-    private String[] split = new String[ListaMenu().size()];
     
     public ListaS() {
         this.primero = null;
@@ -125,40 +124,6 @@ public class ListaS  {
         return null;
     }
 
-    public List<String> ListaMenu() 
-    {
-        List<String> Lista = new ArrayList<String>();
-        if (tamano != 0) 
-        {
-            Nodo temp = primero;
-            String str = "";
-
-            for (int i = 0; i < tamano; i++) {
-                str = str + temp.dato + "\n";
-                temp = temp.nodoDer;
-            }
-            
-            Lista.add(str);
-            return Lista;
-        }
-        return Lista;
-    }
-    
-    public void separar(List<String> Lista)
-    {
-        for (String str : Lista) 
-        {
-            split = str.split(" ");
-            for (String posc : split) 
-            {
-                for (int i = 0; i < ListaMenu().size(); i++) 
-                {
-                    split[i] = ListaMenu().get(i);
-                }
-            }
-        }
-    }
-
     public String imprimir() {
         Nodo temp = primero;
         String str = "";
@@ -183,14 +148,7 @@ public class ListaS  {
     {
         return nota;
     }
-    public String[] DatosLista()
-    {
-        return split;
-    }
-    public static String imprime()
-    {
-        return str;
-    }
+    
 
     public String[][] obtenerAlumnos(){
         Nodo temp = primero;
@@ -206,4 +164,29 @@ public class ListaS  {
 
         return alumnos;
     }
+
+    public String [] nomAlumn()
+    {
+        String [][] alumnos = obtenerAlumnos();
+        String[] nomAlumn = new String[alumnos.length];
+
+        for (int i = 0; i < alumnos.length;i++)
+        {
+            nomAlumn[i] = alumnos[i][1] + " " + alumnos[i][2];
+        }
+        return nomAlumn;
+    }
+    public String [] idAlumn()
+    {
+        String [][] datos = obtenerAlumnos();
+        String[] idAlumn = new String[datos.length];
+
+        for (int i = 0; i < datos.length;i++)
+        {
+            idAlumn[i] = datos[i][0];
+        }
+        return idAlumn;
+    }
+
+    
 }
