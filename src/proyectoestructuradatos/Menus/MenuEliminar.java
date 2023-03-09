@@ -51,6 +51,11 @@ public class MenuEliminar extends javax.swing.JFrame {
                 IDActionPerformed(evt);
             }
         });
+        ID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                IDKeyPressed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre del alumno:");
 
@@ -176,6 +181,20 @@ public class MenuEliminar extends javax.swing.JFrame {
     private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreActionPerformed
+
+    private void IDKeyPressed(java.awt.event.KeyEvent evt) 
+    {
+        char c = evt.getKeyChar();
+
+        if (Character.isDigit(c) || Character.isISOControl(c))
+        {
+            ID.setEditable(true);
+        }
+        else
+        {
+            ID.setEditable(false);
+        }
+    }//GEN-LAST:event_IDKeyPressed
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) 
     {

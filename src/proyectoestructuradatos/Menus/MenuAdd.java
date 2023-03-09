@@ -40,7 +40,7 @@ public class MenuAdd extends javax.swing.JFrame {
         Agregar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Ingrese el apellido del estudiante:");
 
@@ -53,16 +53,31 @@ public class MenuAdd extends javax.swing.JFrame {
                 NombreActionPerformed(evt);
             }
         });
+        Nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NombreKeyPressed(evt);
+            }
+        });
 
         Nota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NotaActionPerformed(evt);
             }
         });
+        Nota.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NotaKeyPressed(evt);
+            }
+        });
 
         Apellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ApellidoActionPerformed(evt);
+            }
+        });
+        Apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ApellidoKeyPressed(evt);
             }
         });
 
@@ -162,6 +177,48 @@ public class MenuAdd extends javax.swing.JFrame {
         this.setVisible(false);
         new MenuPrincipal().setVisible(true);
     }//GEN-LAST:event_CancelarActionPerformed
+
+    private void NombreKeyPressed(java.awt.event.KeyEvent evt) 
+    {
+        char c = evt.getKeyChar();
+
+        if (Character.isLetter(c) || Character.isISOControl(c))
+        {
+            Nombre.setEditable(true);
+        }
+        else
+        {
+            Nombre.setEditable(false);
+        }
+    }
+
+    private void ApellidoKeyPressed(java.awt.event.KeyEvent evt) 
+    {
+        char c = evt.getKeyChar();
+
+        if (Character.isLetter(c) || Character.isISOControl(c))
+        {
+            Apellido.setEditable(true);
+        }
+        else
+        {
+            Apellido.setEditable(false);
+        }
+    }
+
+    private void NotaKeyPressed(java.awt.event.KeyEvent evt) 
+    {
+        char c = evt.getKeyChar();
+
+        if (Character.isDigit(c) || c == '.'|| Character.isISOControl(c))
+        {
+            Nota.setEditable(true);
+        }
+        else
+        {
+            Nota.setEditable(false);
+        }
+    }
 
     /**
      * @param args the command line arguments

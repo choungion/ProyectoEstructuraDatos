@@ -53,6 +53,11 @@ public class MenuNota extends javax.swing.JFrame {
                 IDActionPerformed(evt);
             }
         });
+        ID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                IDKeyPressed(evt);
+            }
+        });
 
         Cancelar.setText("Cancelar");
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +205,20 @@ public class MenuNota extends javax.swing.JFrame {
     private void Nombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nombre1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Nombre1ActionPerformed
+
+    private void IDKeyPressed(java.awt.event.KeyEvent evt) 
+    {
+        char c = evt.getKeyChar();
+
+        if (Character.isDigit(c) || Character.isISOControl(c))
+        {
+            ID.setEditable(true);
+        }
+        else
+        {
+            ID.setEditable(false);
+        }
+    }//GEN-LAST:event_IDKeyPressed
 
     /**
      * @param args the command line arguments
