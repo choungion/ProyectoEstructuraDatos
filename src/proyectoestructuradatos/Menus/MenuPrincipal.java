@@ -461,11 +461,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     
     public void setearImagenes(){
-        AgregarLogo.setIcon(new ImageIcon("src/imagenes/agregarLogo.png"));
-        EliminarLogo.setIcon(new ImageIcon("src/imagenes/eliminarLogo.png"));
-        ConsultarNotaLogo.setIcon(new ImageIcon("src/imagenes/notaLogo.png"));
-        InformacionLogo.setIcon(new ImageIcon("src/imagenes/informacionLogo.png"));
-        SalirLogo.setIcon(new ImageIcon("src/imagenes/salirLogo.png"));
+        try{
+            AgregarLogo.setIcon(new ImageIcon(getClass().getResource("/imagenes/agregarLogo.png")));
+            EliminarLogo.setIcon(new ImageIcon(getClass().getResource("/imagenes/eliminarLogo.png")));
+            ConsultarNotaLogo.setIcon(new ImageIcon(getClass().getResource("/imagenes/notaLogo.png")));
+            InformacionLogo.setIcon(new ImageIcon(getClass().getResource("/imagenes/informacionLogo.png")));
+            SalirLogo.setIcon(new ImageIcon(getClass().getResource("/imagenes/salirLogo.png")));
+        }catch(Exception ex){
+            System.out.println("Error no se encontro alguna imagen");
+        }
     }
     
     public void setearFuentes(){
