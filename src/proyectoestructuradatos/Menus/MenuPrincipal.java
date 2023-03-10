@@ -129,13 +129,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         bg.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(664, 250, 80, 300));
 
         titulo.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
-        titulo.setForeground(new java.awt.Color(23, 37, 42));
+        titulo.setForeground(new java.awt.Color(23, 57, 57));
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titulo.setText("Sistema Gestor de Alumnos");
         titulo.setToolTipText("");
         titulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         titulo.setRequestFocusEnabled(false);
-        bg.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 470, 30));
+        bg.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 470, 30));
 
         menubg.setBackground(new java.awt.Color(43, 122, 120));
         menubg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
