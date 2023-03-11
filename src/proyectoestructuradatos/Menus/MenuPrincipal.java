@@ -24,6 +24,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         setearImagenes();
         setearFuentes();
+        System.out.println("owo");
     }
 
     @SuppressWarnings("unchecked")
